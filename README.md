@@ -2,13 +2,18 @@
 
 A lightweight, high-performance native macOS menu bar app that plays any video as a seamless looping desktop wallpaper behind your desktop icons, on every display and every Space, with zero CPU lag and intelligent battery/sleep awareness.
 
+<div align="center">
+  <img src="assets/demo.gif" alt="Loop Demo Video" width="850">
+  <p><em>Seamless video wallpaper playing in real-time behind desktop icons on macOS (<a href="assets/demo.mp4">Watch Full Demo Video</a>)</em></p>
+</div>
+
 ---
 
 ## 🚀 Quick Download & Install (For Users)
 
 You do **not** need Xcode or the command line to use Loop.
 
-1. Go to **[Releases](https://github.com/your-username/loop/releases)** and download the latest **`Loop-v1.0.0.dmg`**.
+1. Go to **[Releases](https://github.com/suchithm1999/loop/releases)** and download the latest **`Loop-v1.0.0.dmg`**.
 2. Open the downloaded `.dmg` file.
 3. Drag **`Loop.app`** into your **`Applications`** folder.
 4. Launch **Loop** from your Applications folder or Spotlight.
@@ -32,7 +37,7 @@ To open it the first time:
 
 ### One-Command Build & Run
 ```bash
-git clone https://github.com/your-username/loop.git
+git clone https://github.com/suchithm1999/loop.git
 cd loop
 ./build.sh
 ```
@@ -103,7 +108,7 @@ git init
 git add .
 git commit -m "Initial commit of Loop app"
 git branch -M main
-git remote add origin https://github.com/your-username/loop.git
+git remote add origin https://github.com/suchithm1999/loop.git
 git push -u origin main
 ```
 
