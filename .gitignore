@@ -1,0 +1,17 @@
+# Build artifacts
+.build/
+dist/
+*.app
+*.saver
+*.dmg
+*.zip
+*.o
+
+# macOS system files
+.DS_Store
+*.swp
+*~
+
+# Test files
+test_video.mp4
+
