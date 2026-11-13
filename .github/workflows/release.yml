@@ -24,17 +24,33 @@ jobs:
 
       - name: Build and Package
         run: |
-          ./build.sh
+          ./build.sh --no-open
           ./package.sh
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
+          name: "Loop ${{ github.ref_name }} — Initial Release 🎉"
+          body: |
+            ## Loop ${{ github.ref_name }} — Video Desktop Wallpaper & Screensaver for macOS
+
+            Loop is a lightweight native macOS menu bar app that turns any local video into a seamless, gapless looping desktop wallpaper and companion screensaver.
+
+            ### ✨ Highlights
+            - **Hardware-Accelerated Playback**: Built on native `AVFoundation` with zero external dependencies, keeping CPU usage strictly under 3%.
+            - **Universal Multi-Display**: Shared decoder decoded once and playing in sync across all connected monitors and desktop Spaces.
+            - **Lock Screen & Screen Saver Included**: Automatically applies a matching poster frame to the Lock Screen and installs `LoopSaver.saver` to play full video during idle.
+            - **Configurable Battery Saver**: Keep looping on battery power, and auto-pause when your battery drops below your chosen threshold (e.g. 20%).
+            - **Occlusion & Sleep Smart**: Automatically pauses when covered by full-screen apps or when displays sleep, resuming instantly on wake.
+            - **Native SwiftUI Settings**: Live preview, display selector, and scaling mode picker (Fill, Fit, Stretch).
+
+            ### 📦 Installation
+            1. Download **`Loop-${{ github.ref_name }}.dmg`** below.
+            2. Open the disk image and drag **Loop.app** into your **Applications** folder.
+            3. Launch Loop. On first launch, if prompted by Gatekeeper, right-click `Loop.app` → select **Open** → click **Open**.
           files: |
             dist/*.dmg
             dist/*.zip
           draft: false
           prerelease: false
-          generate_release_notes: true
-

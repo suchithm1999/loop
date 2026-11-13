@@ -194,11 +194,13 @@ if [[ "${1:-}" == "--dmg" || "${1:-}" == "-d" ]]; then
 fi
 
 # ─────────────────────────────────────────────
-# 5. Launch
+# 5. Launch (skip if running in CI or --no-open)
 # ─────────────────────────────────────────────
-echo ""
-echo "==> Launching $APP_NAME.app..."
-open "$BUNDLE_DIR"
+if [[ "${CI:-}" != "true" && "${1:-}" != "--no-open" ]]; then
+    echo ""
+    echo "==> Launching $APP_NAME.app..."
+    open "$BUNDLE_DIR"
+fi
 
 echo ""
 echo "=== Build Complete ==="
